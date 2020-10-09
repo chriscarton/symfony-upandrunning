@@ -6,11 +6,24 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
+
+            <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" />
+            <script src="{{ asset('/js/jquery.js') }}"></script>
+            <script src="{{ asset('/js/popper.min.js') }}"></script>
+            <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container">
+        <header>
+            <img src="{{asset('img/ban.jpg')}}" class="img-fluid"/>
+        </header>
+        <div class="body-content">
+            {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        </div>
     </body>
 </html>

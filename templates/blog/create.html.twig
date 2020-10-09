@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Création d'un article !</h1>
+
+    {# {{ form(formArticle) }} #}
+
+    {# <hr> #}
+
+    {{ form_start(formArticle)}}
+
+    <div class="form-group">
+        <label for="">Titre</label>
+        {{ form_widget(formArticle.title)}}
+    </div>
+
+    <div class="form-group">
+        <label for="">Contenu</label>
+        {{ form_widget(formArticle.content)}}
+    </div>
+
+    {{form_end(formArticle)}}
+
+    {# //!\ form_end() va afficher tous les champs qui n'ont pas été traité #}
+
+    {# Afficher avec form_row #}
+
+    {# {{ form_row(formArticle.title,{
+        'attr':{
+            'placeholder':"Titre de l'article"
+        }
+    }) }} #}
+
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+            Éditer l'article
+        {% else %}
+            Ajouter l'article
+        {% endif %}
+    </button>
+
+{% endblock %}
