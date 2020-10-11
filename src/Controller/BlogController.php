@@ -26,12 +26,12 @@ class BlogController extends AbstractController
             'controller_name' => 'BlogController',
         ]);
     }
-    /**
-     * @Route("/", name="home")
-     */
-    public function home(){
-        return $this->render('blog/home.html.twig');
-    }
+    // /**
+    //  * @Route("/", name="home")
+    //  */
+    // public function home(){
+    //     return $this->render('blog/home.html.twig');
+    // }
 
     private $em;
 

@@ -1,6 +1,6 @@
-# Faire une requête dans un controller
+# Faire une requête avec un repository
 
-Importer l'entité :
+Importer le repository :
 
     use App\Entity\Article;
     $repo = $this->getDoctrine()->getRepository(Article::class);
@@ -12,4 +12,6 @@ Types de requêtes possibles :
     $articles = $repo->findByTitle("Hello Friend");
     $articles = $repo->findAll();
 
-Ne pas oublier de faire un set de article.
+Et bien d'autres sur la documentation :
+
+Ne pas oublier de faire un set de article dans **render**.

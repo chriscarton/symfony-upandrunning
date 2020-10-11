@@ -7,16 +7,20 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+            {# asset pointe vers le dossier public #}
+
             <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" />
             <script src="{{ asset('/js/jquery.js') }}"></script>
             <script src="{{ asset('/js/popper.min.js') }}"></script>
             <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+            <link href="{{ asset('/build/app.css') }}" rel="stylesheet" />
 
     </head>
     <body>
         <div class="container">
+        <h1 class="site-title">Basic auto</h1>
         <header>
-            <img src="{{asset('img/ban.jpg')}}" class="img-fluid"/>
+            <img src="{{asset('img/drive.jpg')}}" />
         </header>
         <div class="body-content">
             {% block body %}{% endblock %}
@@ -25,5 +29,11 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
         </div>
+
+        {% block bottom %}
+            <div class="text-center">
+                <a class="btn btn-primary" href={{path('annonce_add')}}>+ Ajouter une annonce</a>
+            </div>
+        {% endblock %}
     </body>
 </html>

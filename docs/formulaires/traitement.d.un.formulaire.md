@@ -9,7 +9,11 @@
 
 # Traitement d'une requête
 
+Ne surtout **pas oublier** _\$form->handleRequest()_
+
     $form->handleRequest($request);
+
+Puis vérifier la soumission et la validation :
 
     if($form->isSubmitted() && $form->isValid()){
         $data = $form->getData();

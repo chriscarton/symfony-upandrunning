@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="item">
+        <h2>{{item.title}}<h2>
+        <p>{{item.description}}</p>
+        <div class="price">{{item.price}}</div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <div class="text-center mb-5">
+        <a href="" class="btn btn-warning">Retour à la liste</a>
+    </div>
+    {{parent()}}
+{% endblock %}

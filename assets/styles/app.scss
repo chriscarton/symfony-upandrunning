@@ -1,3 +1,36 @@
 body {
-  background-color: #080808;
+  background-color: rgb(26, 26, 26);
+  font-family: "Roboto";
+  color: rgba(255, 255, 255, 0.7);
+}
+.site-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: right;
+  margin: 0px;
+}
+header {
+  max-height: 300px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+    //border: 5px dashed blue;
+    width: 100%;
+  }
+}
+
+.items {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+
+  .item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    padding-left: 50px;
+    margin-bottom: 50px;
+    border-left: 3px solid gray;
+  }
 }
