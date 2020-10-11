@@ -13,3 +13,7 @@
     if($this->isCsrfTokenValid('pins_create',$data['_token'])){
         //Traitement...
     }
+
+# Form Builder
+
+Avec un formulaire généré automatiquement, ce mécanisme est présent par défaut.
