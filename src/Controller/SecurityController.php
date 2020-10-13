@@ -50,7 +50,7 @@ class SecurityController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            //... ?
+            
             $user = new User();
 
             $data = $form->getData();
@@ -62,18 +62,24 @@ class SecurityController extends AbstractController
                 $password
             );
 
-            //Bon ça c'est pas bon...
-            //$user->setFirstName($form->get('first_name'));
-            //$user->setLastName($form->get('last_name'));
-            //$user->setEmail($form->get('email'));
             $data->setRoles(['ROLE_USER']);
             $data->setPassword($encoded_password);
             
             $data->setVerified(0);
-            $data->setSecurityKey(uniqid());
+
+            $uniqid = uniqid();
+            $data->setSecurityKey();
 
             $em->persist($data);
             $em->flush();
+
+            /*
+                Envoyer un mail avec un lien 
+                https://mon-site/verification/$uniqid
+                à l'adresse : $data->get('email')->getData()
+            */
+
+            //!\ Dans login, je ne vérifie pas verified (je ne sais pas comment faire)
 
             return $this->redirectToRoute('register_success');
         }
