@@ -2,6 +2,10 @@ html {
   height: 100%;
 }
 
+* {
+  word-break: break-all;
+}
+
 body {
   background-color: rgb(26, 26, 26);
   font-family: "Roboto";
@@ -102,5 +106,21 @@ footer {
   padding: 10px;
   p {
     margin: 0px;
+  }
+}
+
+.body-admin {
+  background-color: #dddad3;
+  background-color: white;
+  h1 {
+    color: black;
+  }
+  th {
+    word-break: keep-all;
+    background-color: black;
+    color: white;
+  }
+  td:last-of-type a {
+    word-break: keep-all;
   }
 }
