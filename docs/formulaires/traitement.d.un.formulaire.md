@@ -37,6 +37,10 @@ Puis vérifier la soumission et la validation :
         return $this->redirectToRoute('app_home');
     }
 
+# Acceder à une clé spéciale :
+
+    $password = $form->get('password')->getData();
+
 # Préremplir un formulaire
 
     $form = $this->createFormBuilder($data);

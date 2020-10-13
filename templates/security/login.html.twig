@@ -5,7 +5,7 @@
 {% block body %}
     <div class="form-container">
 
-        {% if is_granted('ROLE_ADMIN') %}
+        {% if is_granted('ROLE_USER') %}
 
             <p>Vous êtes déjà connecté.</p>
             <a href={{path('app_logout')}} class="btn btn-danger btn-sm">Se déconnecter</a>
@@ -14,12 +14,6 @@
             <form method="post">
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
-
-                {% if app.user %}
-                    <div class="mb-3">
-                        Vous êtes connecté, {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-                    </div>
                 {% endif %}
 
                 <h1 class="h3 mb-3 font-weight-normal">Connectez-vous :</h1>

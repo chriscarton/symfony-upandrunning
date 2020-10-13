@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if(status is same as(true)) %}
+        <h1>Vérification</h1>
+        <p class="text-success">Bravo, vous venez de finaliser votre inscription. <br>Il ne vous reste plus qu'à vous connecter.</p>
+        <div>
+            <a href={{path('app_login')}} class="btn btn-warning">
+                Connectez-vous maintenant !
+            </a>
+        </div>
+    {% else %}
+        <h1>Erreur de vérification</h1>
+        <p class="text-danger">L'identifiant est éronné.</p>
+    {% endif %}
+
+{% endblock %}

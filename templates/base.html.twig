@@ -23,12 +23,13 @@
 
                 <div id="loginButtonBox">
 
-                    {% if not is_granted('ROLE_ADMIN') %}
+                    {% if not is_granted('ROLE_USER') %}
                     <p>Connectez-vous pour pouvoir publier une annonce.</p>
                     {# Ou inscrivez-vous (par la suite) #}
                     
                     <div class="btn-container">
                         <a href={{path('app_login')}} class="btn btn-warning">Se connecter</a>
+                        <a href={{path('app_register')}} class="btn btn-primary">S'inscrire</a>
                     </div>
                     {% else %}
                         Vous êtes connecté.
@@ -46,10 +47,10 @@
 
             {% block bottom %}
             
-                {% if is_granted('ROLE_ADMIN') %}
+                {% if is_granted('ROLE_USER') %}
 
-                    <div class="text-center">
-                        <a class="btn btn-primary" href={{path('annonce_add')}}>+ Ajouter une annonce</a>
+                    <div class="text-center m-5">
+                        <a class="btn btn-primary btn-lg" href={{path('annonce_add')}}>+ Ajouter une annonce</a>
                     </div>
 
                 {% endif %}

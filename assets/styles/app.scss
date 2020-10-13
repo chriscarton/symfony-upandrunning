@@ -87,6 +87,15 @@ header {
     text-align: right;
   }
 }
+
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  > .form-group.pdr10 {
+    padding-right: 10px;
+  }
+}
+
 footer {
   margin-top: auto;
   background-color: rgb(14, 14, 14);
