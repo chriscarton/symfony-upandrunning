@@ -10,7 +10,7 @@
 
 Ouvrir **src/DataFixtures/ArticleFixtures**
 
-Dans load() :
+# Modifier load() :
 
     for($i; $i<=10; $i++){
             $article = new Article();
@@ -25,12 +25,16 @@ Dans load() :
     //Balance la requête SQL
     $manager->flush();
 
-Importer l'entité :
+# Importer l'entité :
 
     use App\Entity\Article;
 
-Executer la fixture :
+# Executer la fixture :
 
     php bin/console doctrine:fixtures:load
 
-//Attention ça purge les données (de toute la base)
+**Attention ça purge les données (de toute la base)**
+
+# Ajouter la fixture :
+
+    php bin/console doctrine:fixtures:load --append

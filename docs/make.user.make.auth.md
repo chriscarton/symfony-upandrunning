@@ -87,3 +87,21 @@ Copier la chaine obtenue après **p=**
 # Parametre append
 
     --append : Append the data fixtures instead of deleting all data from the database first.
+
+# Dans LoginFormAuthenticator (ligne 100)
+
+Ajouter une url de redirection si l'on est bien connecté :
+
+    return new RedirectResponse($this->urlGenerator->generate('annonce'));
+
+# Vérifier qu'on est connecté (DANS LA VUE)
+
+    {% if is_granted('ROLE_ADMIN') %}
+    ...
+    {% endif %}
+
+# Bouton de connexion
+
+    <a href={{path('app_login')}} class="btn btn-warning">Se connecter</a>
+
+La route par defaut est **app_login**
