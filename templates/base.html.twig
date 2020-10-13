@@ -22,12 +22,19 @@
             <header>
 
                 <div id="loginButtonBox">
+
+                    {% if not is_granted('ROLE_ADMIN') %}
                     <p>Connectez-vous pour pouvoir publier une annonce.</p>
                     {# Ou inscrivez-vous (par la suite) #}
                     
                     <div class="btn-container">
                         <a href={{path('app_login')}} class="btn btn-warning">Se connecter</a>
                     </div>
+                    {% else %}
+                        Vous êtes connecté.
+                        <a href={{path('app_logout')}}><i>Se déconnecter</i></a>
+                    {% endif %}
+
                 </div>
                 <img src="{{asset('img/drive.jpg')}}" />
 

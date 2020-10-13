@@ -1,13 +1,7 @@
 html {
   height: 100%;
 }
-.main-container {
-  flex: 1;
-  //background-color: purple;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+
 body {
   background-color: rgb(26, 26, 26);
   font-family: "Roboto";
@@ -16,13 +10,11 @@ body {
   flex-direction: column;
   min-height: 100%;
 }
-footer {
-  margin-top: auto;
-  background-color: rgb(14, 14, 14);
-  padding: 10px;
-  p {
-    margin: 0px;
-  }
+.main-container {
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .site-title {
   font-size: 1.25rem;
@@ -47,8 +39,10 @@ header {
   flex-direction: column;
   display: flex;
   background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
 }
 
+//Pour le login
 .form-container {
   flex: 1;
   flex-direction: column;
@@ -59,7 +53,6 @@ header {
   form {
     align-self: center;
     justify-self: center;
-    background-color: rgb(163, 45, 45);
     background-color: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 10px;
@@ -92,5 +85,13 @@ header {
   }
   .btn-container {
     text-align: right;
+  }
+}
+footer {
+  margin-top: auto;
+  background-color: rgb(14, 14, 14);
+  padding: 10px;
+  p {
+    margin: 0px;
   }
 }
