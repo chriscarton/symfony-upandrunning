@@ -17,39 +17,44 @@
 
     </head>
     <body>
-        <div class="container">
-        <h1 class="site-title">Basic auto</h1>
-        <header>
+        <div class="container main-container">
+            <h1 class="site-title">Basic auto</h1>
+            <header>
 
-            <div id="loginButtonBox">
-                <p>Connectez-vous pour pouvoir publier une annonce.</p>
-                {# Ou inscrivez-vous (par la suite) #}
-                
-                <div class="btn-container">
-                    <a href={{path('app_login')}} class="btn btn-warning">Se connecter</a>
+                <div id="loginButtonBox">
+                    <p>Connectez-vous pour pouvoir publier une annonce.</p>
+                    {# Ou inscrivez-vous (par la suite) #}
+                    
+                    <div class="btn-container">
+                        <a href={{path('app_login')}} class="btn btn-warning">Se connecter</a>
+                    </div>
                 </div>
-            </div>
-            <img src="{{asset('img/drive.jpg')}}" />
+                <img src="{{asset('img/drive.jpg')}}" />
 
-        </header>
-        <div class="body-content">
-            {% block body %}{% endblock %}
+            </header>
+
+            <div class="body-content">
+                {% block body %}{% endblock %}
+            </div>
+
+            {% block bottom %}
+            
+                {% if is_granted('ROLE_ADMIN') %}
+
+                    <div class="text-center">
+                        <a class="btn btn-primary" href={{path('annonce_add')}}>+ Ajouter une annonce</a>
+                    </div>
+
+                {% endif %}
+
+            {% endblock %}
+
         </div>
+        {% block footer %}
+            <footer id="Footer"><p class="text-center">Crée par Chris Carton</p></footer>
+        {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-        </div>
-
-        {% block bottom %}
-        
-            {% if is_granted('ROLE_ADMIN') %}
-
-                <div class="text-center">
-                    <a class="btn btn-primary" href={{path('annonce_add')}}>+ Ajouter une annonce</a>
-                </div>
-
-            {% endif %}
-
         {% endblock %}
     </body>
 </html>

@@ -1,7 +1,28 @@
+html {
+  height: 100%;
+}
+.main-container {
+  flex: 1;
+  //background-color: purple;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 body {
   background-color: rgb(26, 26, 26);
   font-family: "Roboto";
   color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+footer {
+  margin-top: auto;
+  background-color: rgb(14, 14, 14);
+  padding: 10px;
+  p {
+    margin: 0px;
+  }
 }
 .site-title {
   font-size: 1.25rem;
@@ -17,17 +38,41 @@ header {
     display: block;
     object-fit: contain;
     object-position: center center;
-    //border: 5px dashed blue;
     width: 100%;
   }
 }
 
-.items {
+.body-content {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.form-container {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(163, 45, 45);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.items {
+  // background-color: rgba(255, 255, 255, 0.05);
   padding: 10px;
 
   .item {
-    background-color: rgba(255, 255, 255, 0.05);
+    // background-color: rgba(255, 255, 255, 0.05);
     padding: 10px;
     padding-left: 50px;
     margin-bottom: 50px;
